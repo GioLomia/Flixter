@@ -7,10 +7,13 @@ import android.util.Log;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.flixter.models.Movie;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import okhttp3.Headers;
 
@@ -18,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     //URL for API
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     public static final String TAG = "MainActivity";
+    List<Movie> movies;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonObject = json.jsonObject;
                 try {
                     JSONArray results = jsonObject.getJSONArray("results");
+                    Log.i(TAG,"Json Recieved, results: "+results.toString());
+                    movies = Movie.fromJsonArray(results);
+                    Log.i(TAG,"Movies: " + movies.size());
                 } catch (JSONException e) {
                     Log.e(TAG,"Json Exception",e);
                     e.printStackTrace();
