@@ -5,7 +5,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 
 ### User Stories
 
-#### REQUIRED (10pts)
+#### REQUIRED
 
 - [X] Expose details of movie (ratings using RatingBar, popularity, and synopsis) in a separate activity.
 - [X] Allow video posts to be played in full-screen using the YouTubePlayerView.
@@ -29,8 +29,8 @@ Describe any challenges encountered while building the app.
 
 ### User Stories
 A user story is a way to capture requirements for an app from an end-user perspective. It is a common practice in app development and helps to simplify the way requirements are specified.
-#### REQUIRED (10pts)
-- [X] (10pts) User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
+#### REQUIRED
+- [X] User can view a list of movies (title, poster image, and overview) currently playing in theaters from the Movie Database API.
 
 #### BONUS
 - [X] Views should be responsive for both landscape/portrait mode.
